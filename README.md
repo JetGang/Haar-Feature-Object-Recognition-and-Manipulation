@@ -8,3 +8,4 @@ https://youtu.be/4PgVM8TIRwo
 
 * opencv2.framework
 * Xcode 7.0 or 8.0 
+* RBManager(https://github.com/wesgood/RBManager)
