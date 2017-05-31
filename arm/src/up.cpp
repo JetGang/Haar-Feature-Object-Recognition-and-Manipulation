@@ -1,4 +1,4 @@
-// The main function of this node is publish joint angle to each correspond joint.
+// The main function of this node is publish joint angle to each correspond joint for picking up process and .
 
 #include <ros/ros.h>
 #include "geometry_msgs/Point.h"
@@ -141,28 +141,6 @@ public:
        }
 
        
- /*    while (ros::ok())
-       {
-       joint4_pub.publish(msg_4);
-       ROS_INFO("%f", msg_4.data);
-        loop_rate.sleep();
-        ++k;
-        if(k>3){
-        break;
-        }
-       }
- */
-     
- /*    int wait=0;
-    while (ros::ok())
-        {
-   loop_rate.sleep();
-       if(wait>6){
-        break;
-        }
-        ++wait; 
-       }
- */
      while (ros::ok())
        {
        joint5_pub.publish(msg_5);
