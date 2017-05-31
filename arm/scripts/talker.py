@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# license removed for brevity
+import rospy
+
+from std_msgs.msg import Float64
+
+
+
+def talker():
+    pub = rospy.Publisher('arm_shoulder_pan_joint/command', Float64)
+    rospy.init_node('gripper_controller')
+    #rate = rospy.Rate(10) # 10hz
+    #msg = Float64(l)
+    while not rospy.is_shutdown():
+        l=3.14
+        msg = Float64(l)
+        rospy.loginfo(msg)
+        pub.publish(msg)
+        #rate.sleep()
+        return True  
+
+if __name__ == '__main__':
+    try:
+        #l=raw_input(">>")
+        #msg = Float64(l)
+        talker()
+    except rospy.ROSInterruptException:
+        pass
