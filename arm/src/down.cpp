@@ -1,3 +1,6 @@
+//The main function for this node is publish joint angle to each correspond joint for placing process,
+//and also send the end singal to ios devices.
+
 #include <ros/ros.h>
 #include "geometry_msgs/Point.h"
 #include "std_msgs/Float64.h"
@@ -69,17 +72,7 @@ public:
         }
         ++wait; 
        }
-  /*        while (ros::ok())
-       {
-     
-       joint2_pub.publish(msg_2);
-       ROS_INFO("%f", msg_2.data);
-        loop_rate.sleep();
-        ++j;
-        if(j>3)
-        break;
-       }
-*/
+    
      while (ros::ok())
        {
        joint5_pub.publish(msg_5);
@@ -151,7 +144,7 @@ private:
   ros::Publisher joint4_pub;
   ros::Publisher joint5_pub;
   ros::Publisher signal_pub;
-// ros::Subscriber e_sub;
+
   ros::Subscriber d_sub;
 
 };//End of class SubscribeAndPublish
