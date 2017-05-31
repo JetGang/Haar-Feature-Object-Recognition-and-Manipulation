@@ -1,3 +1,5 @@
+//The main function of this node is using inverse kinematic to calculate joint angle for each joint.
+
 #include "ros/ros.h"
 #include "geometry_msgs/Point.h"
 #include "std_msgs/Float64.h"
