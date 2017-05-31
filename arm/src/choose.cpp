@@ -1,3 +1,6 @@
+//This main function of this node is subscribe topics from other parts of whole system, 
+//and then publish to position data to follow-up inverse kinematic node.
+
 #include <ros/ros.h>
 #include "geometry_msgs/Point.h"
 #include "std_msgs/Float64.h"
