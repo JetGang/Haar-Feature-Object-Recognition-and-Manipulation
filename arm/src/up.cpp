@@ -1,3 +1,5 @@
+// The main function of this node is publish joint angle to each correspond joint.
+
 #include <ros/ros.h>
 #include "geometry_msgs/Point.h"
 #include "std_msgs/Float64.h"
