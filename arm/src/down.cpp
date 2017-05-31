@@ -1,5 +1,5 @@
 //The main function for this node is publish joint angle to each correspond joint for placing process,
-//and also send the end singal to ios devices.
+//and also send the end signal to ios devices.
 
 #include <ros/ros.h>
 #include "geometry_msgs/Point.h"
