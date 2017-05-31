@@ -32,15 +32,19 @@ public:
     std_msgs::Float64 msg_3;
     std_msgs::Float64 signal;
 
-    msg_up.x=msg.x;// distance
+    //pick up position
+    msg_up.x=msg.x;// distance between object and manipulator
     msg_up.y=msg.y;//height of object
-    msg_up.z=0; // orientation
-    msg_down.x=42;
+    msg_up.z=0; 
+    
+    //place position
+    msg_down.x=42; 
     msg_down.y=0;
     msg_down.z=0;
-    msg_1.data=msg.z;
-    msg_3.data=0.0; //down rotation
-    signal.data=1;
+    
+    msg_1.data=msg.z; // up rotation for shoulder
+    msg_3.data=0.0; //down rotation for shoulder
+    signal.data=1; //signal for starting picking and placing
 
     ros::Rate loop_rate(10);
 
