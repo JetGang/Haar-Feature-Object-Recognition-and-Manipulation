@@ -1,4 +1,4 @@
-// The main function of this node is publish joint angle to each correspond joint for picking up process and .
+// The main function of this node is publish joint angle to each correspond joint for picking up process.
 
 #include <ros/ros.h>
 #include "geometry_msgs/Point.h"
@@ -16,6 +16,8 @@ public:
     joint3_pub = n.advertise<std_msgs::Float64>("arm_elbow_flex_joint/command", 1000);
     joint4_pub = n.advertise<std_msgs::Float64>("arm_wrist_flex_joint/command", 1000);
     joint5_pub = n.advertise<std_msgs::Float64>("gripper_joint/command", 1000);
+   
+   // set up initial configuration of manipulator
     std_msgs::Float64 i_1;
     std_msgs::Float64 i_2;
     std_msgs::Float64 i_3;
@@ -55,7 +57,7 @@ public:
 
   }
  
-  void recallback(std_msgs::Float64 msg)
+  void recallback(std_msgs::Float64 msg) // rotate shoulder joint towards to the object
    {
     std_msgs::Float64 msg_e;
     
@@ -73,7 +75,7 @@ public:
     }
    }
 
- void rbcallback(std_msgs::Float64 msg)
+ void rbcallback(std_msgs::Float64 msg) // start picking up object
   {
     double U[1][3];
     std_msgs::Float64 msg_b;
@@ -108,7 +110,7 @@ public:
     msg_5.data=msg.data;
   }
 
-  void upcallback(geometry_msgs::Point msg)
+  void upcallback(geometry_msgs::Point msg) // lift object up
   {
     double U[1][3];
     std_msgs::Float64 msg_2;
