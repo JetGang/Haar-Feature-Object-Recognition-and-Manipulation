@@ -57,7 +57,7 @@ public:
 
   }
  
-  void recallback(std_msgs::Float64 msg) // rotate shoulder joint towards to the object
+  void recallback(std_msgs::Float64 msg) // rotate shoulder joint to place direction after the arm lifting the object
    {
     std_msgs::Float64 msg_e;
     
@@ -75,7 +75,7 @@ public:
     }
    }
 
- void rbcallback(std_msgs::Float64 msg) // start picking up object
+ void rbcallback(std_msgs::Float64 msg) // rotate shoulder joint towards to the object and start picking up object
   {
     double U[1][3];
     std_msgs::Float64 msg_b;
